@@ -64,6 +64,9 @@ app.use("/auth", authRoute);
 app.use("/medicine", medicineRoute);
 // Routes Customer
 app.use("/customer", customerRoute);
+app.get("/", (req, res) => {
+  res.status(200).json("Hello");
+});
 
 //////////////////////////////// End Routes/////////////////////////////////////////////
 // Start Server
