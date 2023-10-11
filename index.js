@@ -16,11 +16,12 @@ dotenv.config();
 //
 app.use(
   cors({
-    origin: "https://react-pharmacy-client.vercel.app/",
+    origin: "https://react-pharmacy-client.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
   })
 );
+
 // JSON Use
 app.use(express.json());
 app.use(cookieParser());
