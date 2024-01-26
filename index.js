@@ -15,11 +15,6 @@ const PORT = process.env.PORT_URL || 5000;
 dotenv.config();
 //
 app.use(
-  // cors({
-  //   origin: "https://react-pharmacy-client.vercel.app",
-  //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  //   preflightContinue: false,
-  // })
   cors({
     origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -73,9 +68,12 @@ app.use("/customer", customerRoute);
 app.get("/", (req, res) => {
   res.status(200).json("Hello");
 });
+app.post("/", (req, res) => {
+  res.status(200).json("Hello");
+});
 
 //////////////////////////////// End Routes/////////////////////////////////////////////
 // Start Server
-app.listen(5000, () => {
-  console.log("Server is running 5000 port");
+app.listen(PORT, () => {
+  console.log(`Server is running ${PORT} port `);
 });
